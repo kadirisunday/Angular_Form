@@ -1,0 +1,51 @@
+<div class="container">
+  <h2>User Setting</h2>
+  <form #myForm="ngForm">
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Name</label>
+      <input type="text" class="form-control" id="exampleInputEmail1" name="name"  [(ngModel)]="usersetting.name">
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label">Email</label>
+      <input type="email" class="form-control" id="exampleInputPassword1" name="email"  [(ngModel)]="usersetting.email">
+    </div>
+   <div class="form-group">
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="LIght"  [(ngModel)]="usersetting.exampleRadios">
+      <label class="form-check-label" for="exampleRadios1">
+        Light
+      </label>
+    </div>
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="Medium" [(ngModel)]="usersetting.exampleRadios">
+      <label class="form-check-label" for="exampleRadios2">
+        Medium
+      </label>
+    </div>
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="Dark" [(ngModel)]="usersetting.exampleRadios">
+      <label class="form-check-label" for="exampleRadios2" ngModel>
+        Dark
+      </label>
+    </div>
+   </div>
+    
+
+    <div class="form-group">
+      <label for="subscription_form">subscription form</label>
+      <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" id="subscription_form" name="subscriptionType" [(ngModel)]="usersetting.subscriptionType">
+        <option selected>Select your subscription</option>
+        <option value="Monthly">Monthly</option>
+        <option value="Lifetime">Lifetime</option>
+        <option value="Annual">Annually</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="notes">Notes</label>
+      <textarea name="notes" id="notes" rows="3" class="form-control" [(ngModel)]="usersetting.note"></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>
+
+<h2>{{ usersetting | json}}</h2>
